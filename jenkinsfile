@@ -54,7 +54,7 @@ pipeline {
                       }
                     }
                 }
-             stage(' Docker Image Push to Amazon ECR') {
+             stage(' Docker ImagePush to Amazon ECR') {
              steps {
                script {
                   withDockerRegistry([credentialsId:'credential', url:"https://034692783810.dkr.ecr.ap-south-1.amazonaws.com"]){
