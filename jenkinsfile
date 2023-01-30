@@ -31,7 +31,7 @@ pipeline {
                 echo 'Starting Building Docker Image'
                 sh 'docker build -t vaishalishejul/keshavpipeline .'
                 sh 'docker build -t keshavpipeline .'
-		sh 'docker build -t keshavpipeline .'
+	
                 echo 'Completed  Building Docker Image'
             }
         }
