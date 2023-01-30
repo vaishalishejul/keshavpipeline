@@ -17,6 +17,15 @@ pipeline {
 				echo 'code compilation is completed'
             }
         }
+	stage('code packaging')
+        		{
+        						steps
+        						{
+        						echo 'code packaging started'
+        						sh 'mvn clean package'
+        						echo 'code packaging finished'
+        						}
+							}
          stage('Building & Tag Docker Image') {
             steps {
                 echo 'Starting Building Docker Image'
@@ -38,7 +47,7 @@ pipeline {
                          withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
                          sh 'docker login -u vaishalishejul -p ${dockerhubCred}'
                          echo "Push Docker Image to DockerHub : In Progress"
-                         sh 'docker push vaishalishejul/pipeline:first'
+                         sh 'docker push vaishalishejul/pipeline-jenkins:latest'
                          echo "Push Docker Image to DockerHub : In Progress"
                          sh 'whoami'
                          }
