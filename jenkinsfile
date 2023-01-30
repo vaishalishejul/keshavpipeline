@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo 'Docker Image Scanning Started'
                 sh 'java -version'
-                echo 'Docker Image Scanning Started'
+                echo 'Docker Image Scanning Started correctly'
             }
         }
         stage(' Docker push to Docker Hub') {
